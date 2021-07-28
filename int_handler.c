@@ -31,7 +31,7 @@ char	*int_handler(long long input, t_specifier *specifier, char *base_str)
 		initial_str = str_create('0', specifier->flags.prec - str_len);
 	else
 		initial_str = ft_strdup("");
-	new_str = ft_strjoin(initial_str, str); 
+	new_str = ft_strjoin(initial_str, str);
 	free(initial_str);
 	free(str);
 	return (new_str);
