@@ -2,10 +2,10 @@
 
 char	*hex_handler(unsigned long input, t_specifier *specifier, char *base)
 {
-	char	*str;
-	char	*new_str;
-	int		str_len;
-	char	*initial_str;
+	char			*str;
+	char			*new_str;
+	char			*initial_str;
+	unsigned int	str_len;
 
 	str = ft_llutoa_base(input, base);
 	str_len = ft_strlen(str);
