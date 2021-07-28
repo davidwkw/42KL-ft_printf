@@ -17,8 +17,8 @@ typedef struct s_flags
 	unsigned int	alt_form : 1;
 	unsigned int	sign : 1;
 	unsigned int	f_prec : 1;
-	int				width;
-	int				prec;
+	unsigned int	width;
+	unsigned int	prec;
 }	t_flags;
 
 typedef struct s_specifier
