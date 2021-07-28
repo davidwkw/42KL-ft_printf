@@ -33,7 +33,6 @@ typedef struct s_specifier
 int		ft_printf(const char *format, ...);
 void	parse_format(t_specifier *specifier);
 t_flags	reset_flags(void);
-size_t	validate_specifier(t_specifier *specifier);
 void	parse_flags(char flag, t_specifier *specifier);
 void	parse_width_precision(char c, t_specifier *specifier, char m);
 void	conversion_dispatcher(char c, t_specifier *format);

@@ -25,5 +25,4 @@ void	width_handler(t_specifier *specifier, char *str, size_t str_len)
 	specifier->nprint += write(1, str, str_len);
 	if (specifier->flags.pad_right)
 		pad(specifier, pad_char, &width_diff);
-	free(str);
 }

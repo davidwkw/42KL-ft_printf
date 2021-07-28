@@ -15,7 +15,7 @@ t_flags	reset_flags(void)
 	});
 }
 
-size_t	validate_specifier(t_specifier *specifier)
+static size_t	validate_specifier(t_specifier *specifier)
 {
 	unsigned int	i;
 

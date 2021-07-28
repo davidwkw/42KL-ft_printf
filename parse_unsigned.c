@@ -8,4 +8,5 @@ void	parse_unsigned(t_specifier *specifier)
 	input = va_arg(specifier->args, unsigned int);
 	str = int_handler(input, specifier, "0123456789");
 	width_handler(specifier, str, ft_strlen(str));
+	free(str);
 }

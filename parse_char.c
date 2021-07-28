@@ -6,5 +6,5 @@ void	parse_char(t_specifier *specifier)
 
 	str[0] = (char)va_arg(specifier->args, int);
 	str[1] = '\0';
-	width_handler(specifier, ft_strdup(str), 1);
+	width_handler(specifier, str, 1);
 }

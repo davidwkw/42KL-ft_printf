@@ -36,7 +36,7 @@ void	parse_hex(t_specifier *specifier, char mode)
 	if (mode == 'p')
 		input = va_arg(specifier->args, unsigned long);
 	else
-	input = va_arg(specifier->args, unsigned int); 
+		input = va_arg(specifier->args, unsigned int);
 	alt_form = prepend_alt(specifier, mode, input);
 	base_str = base_handler(mode);
 	str = hex_handler(input, specifier, base_str);
@@ -44,4 +44,5 @@ void	parse_hex(t_specifier *specifier, char mode)
 	free(alt_form);
 	free(str);
 	width_handler(specifier, new_str, ft_strlen(new_str));
+	free(new_str);
 }

@@ -1,15 +1,5 @@
 #include "ft_printf.h"
 
-char	*str_create(int c, int len)
-{
-	char	*str;
-
-	str = malloc(sizeof(char) * (len + 1));
-	ft_memset(str, c, len);
-	str[len] = '\0';
-	return (str);
-}
-
 static void	prepend_sign(t_specifier *specifier, long long input)
 {
 	if (input < 0)
@@ -40,7 +30,7 @@ char	*int_handler(long long input, t_specifier *specifier, char *base_str)
 	if (specifier->flags.f_prec && str_len < specifier->flags.prec)
 		initial_str = str_create('0', specifier->flags.prec - str_len);
 	else
-	initial_str = ft_strdup("");
+		initial_str = ft_strdup("");
 	new_str = ft_strjoin(initial_str, str); 
 	free(initial_str);
 	free(str);

@@ -12,4 +12,5 @@ void	parse_int(t_specifier *specifier)
 	str = int_handler(input, specifier, "0123456789");
 	total_precision = ft_strlen(str);
 	width_handler(specifier, str, total_precision);
+	free(str);
 }

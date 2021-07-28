@@ -1,6 +1,6 @@
 SRCS 	=	conversion_dispatcher.c \
 			width_handler.c \
-			format_parser.c \
+			parse_format.c \
 			ft_llutoa_base.c \
 			ft_printf.c \
 			parse_char.c \
@@ -13,7 +13,8 @@ SRCS 	=	conversion_dispatcher.c \
 			parse_unsigned.c \
 			parse_width_precision.c \
 			int_handler.c \
-			hex_handler.c
+			hex_handler.c \
+			ft_strcreate.c
 
 OBJS = $(SRCS:.c=.o)
 

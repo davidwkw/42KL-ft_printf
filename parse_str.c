@@ -9,5 +9,5 @@ void	parse_str(t_specifier *specifier)
 	total_precision = ft_strlen(str);
 	if (specifier->flags.f_prec && (total_precision > specifier->flags.prec))
 		total_precision = specifier->flags.prec;
-	width_handler(specifier, ft_strdup(str), total_precision);
+	width_handler(specifier, str, total_precision);
 }
