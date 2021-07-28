@@ -16,10 +16,10 @@ static void	prepend_sign(t_specifier *specifier, long long input)
 
 char	*int_handler(long long input, t_specifier *specifier, char *base_str)
 {
-	char	*str;
-	char	*new_str;
-	char	*initial_str;
-	int		str_len;
+	char			*str;
+	char			*new_str;
+	char			*initial_str;
+	unsigned int	str_len;
 
 	prepend_sign(specifier, input);
 	if (input < 0)
