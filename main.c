@@ -12,7 +12,7 @@ int	main(void)
 	// i = printf("hello,c |%c|.\n", NULL);  //s == (null), p == (nil)
 	// i = printf("hello,s |%.c|.\n", 'd');  //s == (null), p == (nil)
 	// i = printf("hello,p %.p.\n", NULL);  //s == (null), p == (nil)
-	i = printf("%123.23d \n", 1234);  //s == (null), p == (nil)
+	i = printf("%04d \n", -532);  //s == (null), p == (nil)
 	// i = printf("hello,i %i.\n", NULL);  //s == (null), p == (nil)
 	// i = printf("hello,u %.2u.\n", 0);  //s == (null), p == (nil)
 	// i = printf("hello,x %#.x.\n", NULL);  //s == (null), p == (nil)
@@ -23,7 +23,7 @@ int	main(void)
 	// j = ft_printf("hello,c |%c|.\n", NULL);
 	// j = ft_printf("hello,s |%.c|.\n", 'd');
 	// j = ft_printf("hello,p %.p.\n", NULL);
-	j = ft_printf("%123.23d \n", 1234);
+	j = ft_printf("%04d \n", -532);
 	// j = ft_printf("hello,i %i.\n", NULL);
 	// j = ft_printf("hello,u %.2u.\n", 0);
 	// j = ft_printf("hello,x %#.x.\n", NULL);
