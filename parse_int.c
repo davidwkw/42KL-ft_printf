@@ -42,6 +42,7 @@ void	parse_int(t_specifier *specifier)
 		new_str = prepend_sign(sign, str);
 	else
 	{
+		new_str = str;
 		specifier->nprint += write(1, sign, ft_strlen(sign));
 		total_len =- ft_strlen(sign);
 	}
