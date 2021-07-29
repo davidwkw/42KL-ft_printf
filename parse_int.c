@@ -32,24 +32,13 @@ void	parse_int(t_specifier *specifier)
 	long long	input;
 	char		*sign;
 	char		*new_str;
-	int			len;
 
 	input = va_arg(specifier->args, int);
 	sign = sign_selector(specifier, input);
 	str = int_handler(input, specifier, "0123456789");
-	len = ft_strlen(str);
-	if (!specifier->flags.pad_zero)
-	{
-		new_str = prepend_sign(sign, str);
-		free(str);
-	}
-	else
-	{
-		new_str = str;
-		specifier->nprint += write(1, sign, len);
-		len += 1;
-	}
-	width_handler(specifier, new_str, len);
+	new_str = prepend_sign(sign, str);
+	width_handler(specifier, new_str, ft_strlen(new_str));
 	free(new_str);
 	free(sign);
+	free(str);
 }
