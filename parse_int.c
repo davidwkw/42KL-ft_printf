@@ -44,7 +44,7 @@ void	parse_int(t_specifier *specifier)
 	{
 		new_str = str;
 		specifier->nprint += write(1, sign, ft_strlen(sign));
-		total_len =- ft_strlen(sign);
+		total_len -= ft_strlen(sign);
 	}
 	width_handler(specifier, new_str, total_len);
 	free(new_str);
