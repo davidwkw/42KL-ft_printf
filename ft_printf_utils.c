@@ -9,5 +9,3 @@ char	*str_create(int c, int len)
 	str[len] = '\0';
 	return (str);
 }
-
-
