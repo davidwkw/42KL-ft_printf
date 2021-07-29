@@ -17,7 +17,8 @@ SRCS =	ft_strjoin.c \
 		ft_strdup.c \
 		ft_strjoin.c \
 		ft_strlen.c \
-		ft_strlcpy.c
+		ft_strlcpy.c \
+		ft_strndup.c
 
 OBJS = $(SRCS:.c=.o)
 

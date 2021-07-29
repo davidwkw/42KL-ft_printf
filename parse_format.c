@@ -9,6 +9,7 @@ t_flags	reset_flags(void)
 		.pad_zero = 0,
 		.alt_form = 0,
 		.f_prec = 0,
+		.sign = 0,
 		.width = 0,
 		.prec = 0
 	});
@@ -42,7 +43,10 @@ void	parse_format(t_specifier *specifier)
 	i = 0;
 	i += validate_specifier(specifier);
 	if (!specifier->is_valid)
-		specifier->nprint += write(1, specifier->format, i);
+		specifier->fmt_str = ft_strndup(specifier->format, i);
+		// specifier->nprint += write(1, specifier->format, i);
+	specifier->nprint += write(1, specifier->fmt_str, ft_strlen(specifier->fmt_str));
+	free(specifier->fmt_str);
 	specifier->format += i - 1;
 	specifier->is_valid = 0;
 	specifier->flags = reset_flags();

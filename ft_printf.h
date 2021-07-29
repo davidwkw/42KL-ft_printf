@@ -16,6 +16,7 @@ typedef struct s_flags
 	unsigned int	pad_zero : 1;
 	unsigned int	alt_form : 1;
 	unsigned int	f_prec : 1;
+	unsigned int	sign : 1;
 	unsigned int	width;
 	unsigned int	prec;
 }	t_flags;
@@ -27,6 +28,7 @@ typedef struct s_specifier
 	int		is_valid : 1;
 	t_flags	flags;
 	int		nprint;
+	char	*fmt_str;
 }	t_specifier;
 
 int		ft_printf(const char *format, ...);
