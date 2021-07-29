@@ -39,5 +39,5 @@ void	parse_int(t_specifier *specifier)
 	str = int_handler(input, specifier, "0123456789");
 	new_str = prepend_sign(sign, str);
 	width_handler(specifier, new_str, ft_strlen(str));
-	free(str);
+	free(new_str);
 }
