@@ -12,4 +12,6 @@ void	parse_flags(char flag, t_specifier *specifier)
 		specifier->flags.alt_form = 1;
 	else if (flag == '0')
 		specifier->flags.pad_zero = (!specifier->flags.pad_right);
+	else if (flag == '.')
+		specifier->flags.pad_zero = !(specifier->flags.f_prec = 1);
 }
