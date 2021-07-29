@@ -5,7 +5,10 @@ static char	*sign_selector(t_specifier *specifier, long long input)
 	char	*str;
 
 	if (input < 0)
+	{
 		str = ft_strdup("-");
+		specifier->flags.prepend_space = 0;
+	}
 	else if (specifier->flags.pos)
 		str = ft_strdup("+");
 	else if (specifier->flags.prepend_space)
@@ -33,8 +36,6 @@ void	parse_int(t_specifier *specifier)
 	char		*new_str;
 
 	input = va_arg(specifier->args, int);
-	if (input < 0)
-		specifier->flags.prepend_space = 0;
 	sign = sign_selector(specifier, input);
 	str = int_handler(input, specifier, "0123456789");
 	new_str = prepend_sign(sign, str);
