@@ -41,8 +41,8 @@ char	*int_handler(long long input, t_specifier *specifier, char *base_str)
 		str = ft_llutoa_base(input, base_str);
 	str_len = ft_strlen(str);
 	sign = sign_selector(specifier, input);
-	if (specifier->flags.f_prec)
-		specifier->flags.pad_zero = 0;
+	// if (specifier->flags.f_prec)
+	// 	specifier->flags.pad_zero = 0;
 	if (specifier->flags.f_prec && str_len < specifier->flags.prec)
 		initial_str = str_create('0', specifier->flags.prec - str_len);
 	else

@@ -25,7 +25,7 @@ static size_t	validate_specifier(t_specifier *specifier)
 		parse_width_precision(specifier->format[i++], specifier, 'w');
 	if (ft_strchr(".", specifier->format[i]))
 	{
-		specifier->flags.f_prec = 1;
+		specifier->flags.pad_zero = !(specifier->flags.f_prec = 1);
 		i++;
 	}
 	while (ft_isdigit(specifier->format[i]))
