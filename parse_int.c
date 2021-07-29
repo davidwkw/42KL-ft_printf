@@ -32,7 +32,6 @@ void	parse_int(t_specifier *specifier)
 	long long	input;
 	char		*sign;
 	char		*new_str;
-	unsigned int total_len;
 
 	input = va_arg(specifier->args, int);
 	sign = sign_selector(specifier, input);
