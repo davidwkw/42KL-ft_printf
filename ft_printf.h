@@ -15,7 +15,6 @@ typedef struct s_flags
 	unsigned int	prepend_space : 1;
 	unsigned int	pad_zero : 1;
 	unsigned int	alt_form : 1;
-	unsigned int	sign : 1;
 	unsigned int	f_prec : 1;
 	unsigned int	width;
 	unsigned int	prec;

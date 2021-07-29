@@ -8,7 +8,6 @@ t_flags	reset_flags(void)
 		.prepend_space = 0,
 		.pad_zero = 0,
 		.alt_form = 0,
-		.sign = 0,
 		.f_prec = 0,
 		.width = 0,
 		.prec = 0
