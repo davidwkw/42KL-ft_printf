@@ -8,6 +8,8 @@ char	*hex_handler(unsigned long input, t_specifier *specifier, char *base)
 	unsigned int	str_len;
 
 	str = ft_llutoa_base(input, base);
+	if (!input && specifier->flags.f_prec)
+		str = ft_strdup("");
 	str_len = ft_strlen(str);
 	if (specifier->flags.f_prec && str_len < specifier->flags.prec)
 		initial_str = str_create('0', specifier->flags.prec - str_len);
