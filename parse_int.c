@@ -23,8 +23,6 @@ static char	*prepend_sign(char *sign, char *str)
 	char	*new_str;
 
 	new_str = ft_strjoin(sign, str);
-	free(sign);
-	free(str);
 	return (new_str);
 }
 
@@ -34,11 +32,21 @@ void	parse_int(t_specifier *specifier)
 	long long	input;
 	char		*sign;
 	char		*new_str;
+	unsigned int total_len;
 
 	input = va_arg(specifier->args, int);
 	sign = sign_selector(specifier, input);
 	str = int_handler(input, specifier, "0123456789");
-	new_str = prepend_sign(sign, str);
-	width_handler(specifier, new_str, ft_strlen(new_str));
+	total_len = ft_strlen(new_str);
+	if (!specifier->flags.pad_zero)
+		new_str = prepend_sign(sign, str);
+	else
+	{
+		specifier->nprint += write(1, sign, ft_strlen(sign));
+		total_len =- ft_strlen(sign);
+	}
+	width_handler(specifier, new_str, total_len);
 	free(new_str);
+	free(sign);
+	free(str);
 }
