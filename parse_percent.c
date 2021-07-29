@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	parse_percent(t_specifier *format)
+void	parse_percent(t_specifier *specifier)
 {
-	format->nprint += write(1, "%", ft_strlen("%"));
+	width_handler(specifier, "%", 1);
 }
