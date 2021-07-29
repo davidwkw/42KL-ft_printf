@@ -8,6 +8,7 @@ int	main(void)
 	int i;
 	int j;
 	// cspdiuxX%
+	i = printf("%-5\n");
 	// i = printf("hello,c |%c|.\n", NULL);  //s == (null), p == (nil)
 	// i = printf("hello,s |%.c|.\n", 'd');  //s == (null), p == (nil)
 	// i = printf("hello,p %.p.\n", NULL);  //s == (null), p == (nil)
@@ -18,6 +19,7 @@ int	main(void)
 	// i = printf("hello,X %X.\n", NULL);  //s == (null), p == (nil)
 	// i = printf("hello,% %%.  what the fuck\n", NULL);  //s == (null), p == (nil)
 	printf("starting ft_version\n");
+	j = ft_printf("%-5\n");
 	// j = ft_printf("hello,c |%c|.\n", NULL);
 	// j = ft_printf("hello,s |%.c|.\n", 'd');
 	// j = ft_printf("hello,p %.p.\n", NULL);
