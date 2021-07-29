@@ -35,7 +35,7 @@ LIBFT = $(LIBFTDIR)/libft.a
 all : $(NAME)
 
 $(LIBFT):
-	@make -C $(LIBFTDIR) bonus
+	@make -C $(LIBFTDIR) all
 
 $(NAME) : $(LIBFT) $(OBJS)
 	@echo "Creating $(NAME)"
