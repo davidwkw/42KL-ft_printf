@@ -42,7 +42,10 @@ char	*int_handler(long long input, t_specifier *specifier, char *base_str)
 	str_len = ft_strlen(str);
 	sign = sign_selector(specifier, input);
 	if (specifier->flags.f_prec && str_len < specifier->flags.prec)
+	{
 		initial_str = str_create('0', specifier->flags.prec - str_len);
+		specifier->flags.pad_zero = 0;
+	}
 	else
 		initial_str = ft_strdup("");
 	new_str = prepend_sign(sign, ft_strjoin(initial_str, str));
