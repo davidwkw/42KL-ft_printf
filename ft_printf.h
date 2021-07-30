@@ -23,12 +23,13 @@ typedef struct s_flags
 
 typedef struct s_specifier
 {
-	char	*format;
-	va_list	args;
-	int		is_valid : 1;
-	t_flags	flags;
-	int		nprint;
-	char	*fmt_str;
+	char			*format;
+	va_list			args;
+	unsigned int	is_valid : 1;
+	unsigned int	is_c : 1;
+	t_flags			flags;
+	int				nprint;
+	char			*fmt_str;
 }	t_specifier;
 
 int		ft_printf(const char *format, ...);

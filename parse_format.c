@@ -38,15 +38,18 @@ static size_t	validate_specifier(t_specifier *specifier)
 
 void	parse_format(t_specifier *specifier)
 {
-	size_t	i;
+	size_t			i;
+	unsigned int	str_len;
 
 	i = 0;
 	i += validate_specifier(specifier);
 	if (!specifier->is_valid)
 		specifier->fmt_str = ft_strndup(specifier->format, i);
-	specifier->nprint += write(1, specifier->fmt_str, ft_strlen(specifier->fmt_str));
+	str_len = ft_strlen(specifier->fmt_str) + specifier->is_c;
+	specifier->nprint += write(1, specifier->fmt_str, str_len);
 	free(specifier->fmt_str);
 	specifier->format += i - 1;
 	specifier->is_valid = 0;
+	specifier->is_c = 0;
 	specifier->flags = reset_flags();
 }
