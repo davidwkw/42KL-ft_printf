@@ -51,7 +51,7 @@ void	parse_format(t_specifier *specifier)
 	long			i;
 	unsigned int	str_len;
 
-	i = -1;
+	i = 0;
 	i += validate_specifier(specifier);
 	if (!specifier->is_valid)
 		specifier->fmt_str = ft_strndup(specifier->format, i);
