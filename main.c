@@ -4,5 +4,5 @@
 int	main(void)
 {
 	// printf("%-5");
-	ft_printf("%-5\n");
+	ft_printf("%-5");
 }

@@ -20,8 +20,10 @@ int	ft_printf(const char *format, ...)
 		if (*specifier.format == '%')
 			parse_format(&specifier);
 		else
+		{
 			specifier.nprint += write(1, specifier.format, 1);
-		specifier.format++;
+			specifier.format++;
+		}
 	}
 	va_end(specifier.args);
 	return (specifier.nprint);

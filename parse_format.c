@@ -51,7 +51,7 @@ void	parse_format(t_specifier *specifier)
 	long			i;
 	unsigned int	str_len;
 
-	i = 0;
+	i = -1;
 	i += validate_specifier(specifier);
 	if (!specifier->is_valid)
 		specifier->fmt_str = ft_strndup(specifier->format, i);
@@ -60,7 +60,7 @@ void	parse_format(t_specifier *specifier)
 		ft_strreplace(specifier->fmt_str, specifier->is_nullc, '\0');
 	specifier->nprint += write(1, specifier->fmt_str, str_len);
 	free(specifier->fmt_str);
-	specifier->format += i - 1;
+	specifier->format += i;
 	specifier->is_valid = 0;
 	specifier->is_nullc = 0;
 	specifier->flags = reset_flags();
