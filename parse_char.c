@@ -2,7 +2,11 @@
 
 void	parse_char(t_specifier *specifier)
 {
-	specifier->is_c = 1;
-	specifier->fmt_str = str_create((char)va_arg(specifier->args, int), 1);
+	char	input;
+
+	input = (char)va_arg(specifier->args, int);
+	if (!input)
+		specifier->is_nullc = 1;
+	specifier->fmt_str = str_create(input, 1);
 	width_handler(specifier);
 }

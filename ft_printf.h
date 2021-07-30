@@ -26,7 +26,7 @@ typedef struct s_specifier
 	char			*format;
 	va_list			args;
 	unsigned int	is_valid : 1;
-	unsigned int	is_c : 1;
+	unsigned int	is_nullc : 1;
 	t_flags			flags;
 	int				nprint;
 	char			*fmt_str;
