@@ -49,4 +49,5 @@ void	parse_int(t_specifier *specifier)
 		free(specifier->fmt_str);
 		specifier->fmt_str = temp;
 	}
+	free(sign);
 }
