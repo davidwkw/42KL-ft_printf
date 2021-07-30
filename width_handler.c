@@ -9,7 +9,7 @@ void	width_handler(t_specifier *specifier)
 	char			*temp;
 
 	temp = NULL;
-	str_len = specifier->is_nullc || ft_strlen(specifier->fmt_str);
+	str_len = ft_strlen(specifier->fmt_str);
 	pad_char = ' ';
  	if (specifier->flags.pad_zero)
  		pad_char = '0';
