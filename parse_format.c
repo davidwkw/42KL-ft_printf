@@ -36,6 +36,16 @@ static size_t	validate_specifier(t_specifier *specifier)
 	return (i);
 }
 
+static void	ft_strreplace(char *str, char s, char r)
+{
+	while (*str)
+	{
+		if (*str == s)
+			*str = r;
+		str++;
+	}
+}
+
 void	parse_format(t_specifier *specifier)
 {
 	size_t			i;
@@ -45,7 +55,9 @@ void	parse_format(t_specifier *specifier)
 	i += validate_specifier(specifier);
 	if (!specifier->is_valid)
 		specifier->fmt_str = ft_strndup(specifier->format, i);
-	str_len = ft_strlen(specifier->fmt_str) + specifier->is_nullc;
+	str_len = ft_strlen(specifier->fmt_str);
+	if (specifier->is_nullc)
+		ft_strreplace(specifier->fmt_str, specifier->is_nullc, '\0');
 	specifier->nprint += write(1, specifier->fmt_str, str_len);
 	free(specifier->fmt_str);
 	specifier->format += i - 1;

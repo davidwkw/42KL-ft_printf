@@ -7,29 +7,6 @@ static char	pad_char_selector(t_specifier *specifier)
 	return (' ');
 }
 
-// static char *null_join(char *s1, char *s2)
-// {
-// 	char			*joinedstr;
-// 	unsigned int	i;
-
-// 	if (s1 && s2)
-// 	{
-// 		joinedstr = malloc(sizeof(char) * (ft_strlen(s1) + 1 + 1));
-// 		if (!joinedstr)
-// 			return (joinedstr);
-// 		i = 0;
-// 		while (s1[i])
-// 		{
-// 			joinedstr[i] = s1[i];
-// 			i++;
-// 		}
-// 		joinedstr[i + 1] = '\0';
-// 		joinedstr[i + 2] = '\0';
-// 		return (joinedstr);
-// 	}
-// 	return (ft_strdup(""));
-// }
-
 static char	*append_width(t_specifier *specifier, char *pad_s)
 {
 	char	*temp;
@@ -51,7 +28,7 @@ void	width_handler(t_specifier *specifier)
 	char			*temp;
 
 	temp = NULL;
-	str_len = ft_strlen(specifier->fmt_str) + specifier->is_nullc;
+	str_len = ft_strlen(specifier->fmt_str);
 	pad_char = pad_char_selector(specifier);
 	if (!specifier->flags.pad_zero)
 		specifier->flags.sign = 0;
