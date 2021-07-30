@@ -1,11 +1,11 @@
 #include "ft_printf.h"
 
-// static char	pad_char_selector(t_specifier *specifier)
-// {
-// 	if (specifier->flags.pad_zero)
-//  		return ('0');
-// 	return (' ');
-// }
+static char	pad_char_selector(t_specifier *specifier)
+{
+	if (specifier->flags.pad_zero)
+ 		return ('0');
+	return (' ');
+}
 
 // static char *null_join(char *s1, char *s2)
 // {
