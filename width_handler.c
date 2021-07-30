@@ -3,7 +3,7 @@
 static char	pad_char_selector(t_specifier *specifier)
 {
 	if (specifier->flags.pad_zero)
- 		return ('0');
+		return ('0');
 	return (' ');
 }
 
@@ -13,7 +13,7 @@ static char	*append_width(t_specifier *specifier, char *pad_s)
 
 	temp = NULL;
 	if (!specifier->flags.pad_right)
- 		temp = ft_strjoin(pad_s, specifier->fmt_str);
+		temp = ft_strjoin(pad_s, specifier->fmt_str);
 	else if (specifier->flags.pad_right)
 		temp = ft_strjoin(specifier->fmt_str, pad_s);
 	return (temp);

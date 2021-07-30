@@ -1,7 +1,5 @@
 #include "ft_printf.h"
 
-
-
 char	*int_handler(long long input, t_specifier *specifier, char *base_str)
 {
 	char			*str;
@@ -11,7 +9,7 @@ char	*int_handler(long long input, t_specifier *specifier, char *base_str)
 
 	if (!input && specifier->flags.f_prec)
 		str = ft_strdup("");
-	else if(input < 0)
+	else if (input < 0)
 		str = ft_llutoa_base(input * -1, base_str);
 	else
 		str = ft_llutoa_base(input, base_str);
