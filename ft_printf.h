@@ -23,7 +23,7 @@ typedef struct s_flags
 
 typedef struct s_specifier
 {
-	char			*format;
+	const char		*format;
 	va_list			args;
 	unsigned int	is_valid : 1;
 	t_flags			flags;
