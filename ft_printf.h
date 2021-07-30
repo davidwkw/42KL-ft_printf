@@ -27,6 +27,7 @@ typedef struct s_specifier
 	va_list			args;
 	unsigned int	is_valid : 1;
 	t_flags			flags;
+	unsigned int	is_nullc : 1;
 	int				nprint;
 	char			*fmt_str;
 }	t_specifier;
