@@ -1,34 +1,34 @@
 #include "ft_printf.h"
 
-static char	pad_char_selector(t_specifier *specifier)
-{
-	if (specifier->flags.pad_zero)
- 		return ('0');
-	return (' ');
-}
+// static char	pad_char_selector(t_specifier *specifier)
+// {
+// 	if (specifier->flags.pad_zero)
+//  		return ('0');
+// 	return (' ');
+// }
 
-static char *null_join(char *s1, char *s2)
-{
-	char			*joinedstr;
-	unsigned int	i;
+// static char *null_join(char *s1, char *s2)
+// {
+// 	char			*joinedstr;
+// 	unsigned int	i;
 
-	if (s1 && s2)
-	{
-		joinedstr = malloc(sizeof(char) * (ft_strlen(s1) + 1 + 1));
-		if (!joinedstr)
-			return (joinedstr);
-		i = 0;
-		while (s1[i])
-		{
-			joinedstr[i] = s1[i];
-			i++;
-		}
-		joinedstr[i + 1] = '\0';
-		joinedstr[i + 2] = '\0';
-		return (joinedstr);
-	}
-	return (ft_strdup(""));
-}
+// 	if (s1 && s2)
+// 	{
+// 		joinedstr = malloc(sizeof(char) * (ft_strlen(s1) + 1 + 1));
+// 		if (!joinedstr)
+// 			return (joinedstr);
+// 		i = 0;
+// 		while (s1[i])
+// 		{
+// 			joinedstr[i] = s1[i];
+// 			i++;
+// 		}
+// 		joinedstr[i + 1] = '\0';
+// 		joinedstr[i + 2] = '\0';
+// 		return (joinedstr);
+// 	}
+// 	return (ft_strdup(""));
+// }
 
 static char	*append_width(t_specifier *specifier, char *pad_s)
 {
