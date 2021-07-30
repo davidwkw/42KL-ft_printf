@@ -8,6 +8,7 @@ void	width_handler(t_specifier *specifier)
 	unsigned int	str_len;
 	char			*temp;
 
+	temp = NULL;
 	str_len = ft_strlen(specifier->fmt_str);
 	pad_char = ' ';
  	if (specifier->flags.pad_zero)
