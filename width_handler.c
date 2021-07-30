@@ -35,9 +35,7 @@ static char	*append_width(t_specifier *specifier, char *pad_s)
 	char	*temp;
 
 	temp = NULL;
-	if (specifier->is_nullc)
-		temp = null_join(pad_s, specifier->fmt_str);
-	else if (!specifier->flags.pad_right)
+	if (!specifier->flags.pad_right)
  		temp = ft_strjoin(pad_s, specifier->fmt_str);
 	else if (specifier->flags.pad_right)
 		temp = ft_strjoin(specifier->fmt_str, pad_s);
