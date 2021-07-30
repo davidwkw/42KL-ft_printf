@@ -2,9 +2,6 @@
 
 void	parse_char(t_specifier *specifier)
 {
-	char	str[2];
-
-	str[0] = (char)va_arg(specifier->args, int);
-	str[1] = '\0';
-	width_handler(specifier, str, 1);
+	specifier->fmt_str = str_create((char)va_arg(specifier->args, int), 1);
+	width_handler(specifier);
 }

@@ -2,16 +2,17 @@
 
 void	parse_str(t_specifier *specifier)
 {
-	char			*str;
+	char			*input;
 	unsigned int	total_precision;
 
-	str = va_arg(specifier->args, char *);
-	if (!str)
-		str = "(null)";
-	else if (!str && specifier->flags.f_prec)
-		str = "";
-	total_precision = ft_strlen(str);
-	if (specifier->flags.f_prec && (total_precision > specifier->flags.prec))
+	input = va_arg(specifier->args, char *);
+	if (!input)
+		input = "(null)";
+	else if (!input && specifier->flags.f_prec)
+		input = "";
+	total_precision = ft_strlen(input);
+	if (specifier->flags.f_prec && (specifier->flags.prec < total_precision))
 		total_precision = specifier->flags.prec;
-	width_handler(specifier, str, total_precision);
+	specifier->fmt_str = ft_strndup(input, total_precision);
+	width_handler(specifier);
 }

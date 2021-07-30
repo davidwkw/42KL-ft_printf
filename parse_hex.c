@@ -26,7 +26,6 @@ static char	*base_handler(char mode)
 
 void	parse_hex(t_specifier *specifier, char mode)
 {
-	char			*str;
 	char			*base_str;
 	unsigned long	input;
 	char			*new_str;
@@ -39,10 +38,10 @@ void	parse_hex(t_specifier *specifier, char mode)
 		input = va_arg(specifier->args, unsigned int);
 	alt_form = prepend_alt(specifier, mode, input);
 	base_str = base_handler(mode);
-	str = hex_handler(input, specifier, base_str);
-	new_str = ft_strjoin(alt_form, str);
+	specifier->fmt_str = hex_handler(input, specifier, base_str);
+	new_str = ft_strjoin(alt_form, specifier->fmt_str);
 	free(alt_form);
-	free(str);
-	width_handler(specifier, new_str, ft_strlen(new_str));
-	free(new_str);
+	free(specifier->fmt_str);
+	specifier->fmt_str = new_str;
+	width_handler(specifier);
 }

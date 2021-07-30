@@ -43,10 +43,9 @@ void	parse_format(t_specifier *specifier)
 	i = 0;
 	i += validate_specifier(specifier);
 	if (!specifier->is_valid)
-		// specifier->fmt_str = ft_strndup(specifier->format, i);
-		specifier->nprint += write(1, specifier->format, i);
-	// specifier->nprint += write(1, specifier->fmt_str, ft_strlen(specifier->fmt_str));
-	// free(specifier->fmt_str);
+		specifier->fmt_str = ft_strndup(specifier->format, i);
+	specifier->nprint += write(1, specifier->fmt_str, ft_strlen(specifier->fmt_str));
+	free(specifier->fmt_str);
 	specifier->format += i - 1;
 	specifier->is_valid = 0;
 	specifier->flags = reset_flags();

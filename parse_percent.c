@@ -2,5 +2,6 @@
 
 void	parse_percent(t_specifier *specifier)
 {
-	width_handler(specifier, "%", 1);
+	specifier->fmt_str = ft_strdup("%");
+	width_handler(specifier);
 }

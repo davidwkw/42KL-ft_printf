@@ -37,7 +37,7 @@ t_flags	reset_flags(void);
 void	parse_flags(char flag, t_specifier *specifier);
 void	parse_width_precision(char c, t_specifier *specifier, char m);
 void	conversion_dispatcher(char c, t_specifier *format);
-void	width_handler(t_specifier *specifier, char *str, size_t str_len);
+void	width_handler(t_specifier *specifier);
 char	*int_handler(long long input, t_specifier *specifier, char *base);
 char	*hex_handler(unsigned long input, t_specifier *specifier, char *base);
 

@@ -14,7 +14,8 @@ static char	*sign_selector(t_specifier *specifier, long long input)
 	else if (specifier->flags.prepend_space)
 		str = ft_strdup(" ");
 	else
-		str = ft_strdup("");
+		return (ft_strdup(""));
+	specifier->flags.sign = 1;
 	return (str);
 }
 
@@ -28,17 +29,24 @@ static char	*prepend_sign(char *sign, char *str)
 
 void	parse_int(t_specifier *specifier)
 {
-	char		*str;
 	long long	input;
 	char		*sign;
-	char		*new_str;
+	char		*temp;
 
 	input = va_arg(specifier->args, int);
 	sign = sign_selector(specifier, input);
-	str = int_handler(input, specifier, "0123456789");
-	new_str = prepend_sign(sign, str);
-	width_handler(specifier, new_str, ft_strlen(new_str));
-	free(new_str);
-	free(sign);
-	free(str);
+	specifier->fmt_str = int_handler(input, specifier, "0123456789");
+	if (!specifier->flags.pad_zero)
+	{
+		temp = prepend_sign(sign, specifier->fmt_str);
+		free(specifier->fmt_str);
+		specifier->fmt_str = temp;
+	}
+	width_handler(specifier);
+	if (specifier->flags.pad_zero)
+	{
+		temp = prepend_sign(sign, specifier->fmt_str);
+		free(specifier->fmt_str);
+		specifier->fmt_str = temp;
+	}
 }
