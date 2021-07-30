@@ -22,7 +22,7 @@ NAME = libftprintf.a
 
 CC = gcc
 
-CFLAGS = -g -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror -I.
 
 RM = rm -f
 
