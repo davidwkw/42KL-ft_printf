@@ -28,7 +28,7 @@ static size_t	validate_specifier(t_specifier *specifier)
 		parse_flags(specifier->format[i++], specifier);
 	while (ft_isdigit(specifier->format[i]))
 		parse_width_precision(specifier->format[i++], specifier, 'p');
-	if (ft_strchr("cspdiuxXn%", specifier->format[i]) && specifier->format[i])
+	if (ft_strchr("cspdiuxX%", specifier->format[i]) && specifier->format[i])
 	{
 		specifier->is_valid = 1;
 		conversion_dispatcher(specifier->format[i++], specifier);

@@ -7,7 +7,6 @@ SRCS 	=	conversion_dispatcher.c \
 			parse_flags.c \
 			parse_hex.c \
 			parse_int.c \
-			parse_nprint.c \
 			parse_percent.c \
 			parse_str.c \
 			parse_unsigned.c \
@@ -39,7 +38,7 @@ $(LIBFT):
 
 $(NAME) : $(LIBFT) $(OBJS)
 	@echo "Creating $(NAME)"
-	@cp $< $@
+	@cp $(LIBFT) $@
 	@$(AR) $(NAME) $(OBJS)
 
 bonus : all

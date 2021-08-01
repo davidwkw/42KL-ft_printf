@@ -16,6 +16,4 @@ void	conversion_dispatcher(char c, t_specifier *specifier)
 		parse_hex(specifier, c);
 	else if (c == '%')
 		parse_percent(specifier);
-	else if (c == 'n')
-		parse_nprint(specifier);
 }
