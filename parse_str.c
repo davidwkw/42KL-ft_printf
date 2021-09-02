@@ -1,11 +1,9 @@
 #include "ft_printf.h"
 
-void	parse_str(t_specifier *specifier)
+void	parse_str(t_specifier *specifier, char *input)
 {
-	char			*input;
 	unsigned int	total_precision;
 
-	input = va_arg(specifier->args, char *);
 	if (!input && specifier->flags.f_prec)
 		input = "";
 	else if (!input)

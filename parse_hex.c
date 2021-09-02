@@ -24,18 +24,13 @@ static char	*base_handler(char mode)
 	return (base);
 }
 
-void	parse_hex(t_specifier *specifier, char mode)
+void	parse_hex(t_specifier *specifier, unsigned long input, char mode)
 {
 	char			*base_str;
-	unsigned long	input;
 	char			*new_str;
 	char			*alt_form;
 
 	base_str = NULL;
-	if (mode == 'p')
-		input = va_arg(specifier->args, unsigned long);
-	else
-		input = va_arg(specifier->args, unsigned int);
 	alt_form = prepend_alt(specifier, mode, input);
 	base_str = base_handler(mode);
 	specifier->fmt_str = hex_handler(input, specifier, base_str);

@@ -42,11 +42,11 @@ void	width_handler(t_specifier *specifier);
 char	*int_handler(long long input, t_specifier *specifier, char *base);
 char	*hex_handler(unsigned long input, t_specifier *specifier, char *base);
 
-void	parse_char(t_specifier *format);
-void	parse_str(t_specifier *format);
-void	parse_hex(t_specifier *format, char c);
-void	parse_int(t_specifier *format);
-void	parse_unsigned(t_specifier *format);
+void	parse_char(t_specifier *specifier, char input);
+void	parse_str(t_specifier *specifier, char *input);
+void	parse_hex(t_specifier *specifier, unsigned long input, char mode);
+void	parse_int(t_specifier *specifier, long long input);
+void	parse_unsigned(t_specifier *specifier, unsigned long long input);
 void	parse_percent(t_specifier *format);
 void	parse_nprint(t_specifier *specifier);
 

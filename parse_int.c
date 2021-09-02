@@ -27,13 +27,11 @@ static char	*prepend_sign(char *sign, char *str)
 	return (new_str);
 }
 
-void	parse_int(t_specifier *specifier)
+void	parse_int(t_specifier *specifier, long long input)
 {
-	long long	input;
 	char		*sign;
 	char		*temp;
 
-	input = va_arg(specifier->args, int);
 	sign = sign_selector(specifier, input);
 	specifier->fmt_str = int_handler(input, specifier, "0123456789");
 	if (!specifier->flags.pad_zero)
